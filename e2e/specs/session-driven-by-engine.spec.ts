@@ -57,7 +57,7 @@ import { selectConductorRepo, toggleConductorObservation } from "../fixtures/con
  * allows. This file's daemon only - see the header for why that is safe, and
  * `settings-conductor.spec.ts` for why a shared override would be a cost fifty specs pay.
  */
-test.use({ daemonEnv: { MISSION_POLL_MS: "400", MISSION_PIPELINE_TICK_MS: "1000" } });
+test.use({ daemonEnv: { MISSION_POLL_MS: "400", MISSION_PIPELINE_TICK_MS: "1000" }, outsideSessions: true });
 
 const EVIDENCE = artifactsDir("session-driven-by-engine");
 /** Long enough for two discovery sweeps and a watch pass, short enough to fail rather than hang. */
